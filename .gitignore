@@ -5,7 +5,7 @@ __pycache__/
 .venv/
 venv/
 
-# Circuit artifacts - large binary files, generate locally
+# Circuit artifacts — large binary files, generate locally
 keys/
 *.ptau
 *.zkey
