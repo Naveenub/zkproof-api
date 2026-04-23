@@ -1,0 +1,16 @@
+[
+  "tests/test_proofs.py::test_bad_key_rejected[asyncio]",
+  "tests/test_proofs.py::test_create_key[asyncio]",
+  "tests/test_proofs.py::test_generate_balance_check[asyncio]",
+  "tests/test_proofs.py::test_generate_identity_verify[asyncio]",
+  "tests/test_proofs.py::test_generate_range_proof[asyncio]",
+  "tests/test_proofs.py::test_generate_returns_proof_fields[asyncio]",
+  "tests/test_proofs.py::test_health[asyncio]",
+  "tests/test_proofs.py::test_list_circuits[asyncio]",
+  "tests/test_proofs.py::test_list_keys[asyncio]",
+  "tests/test_proofs.py::test_no_auth_rejected[asyncio]",
+  "tests/test_proofs.py::test_test_key_accepted[asyncio]",
+  "tests/test_proofs.py::test_unknown_circuit_rejected[asyncio]",
+  "tests/test_proofs.py::test_unknown_system_rejected[asyncio]",
+  "tests/test_proofs.py::test_verify_proof[asyncio]"
+]
