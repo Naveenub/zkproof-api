@@ -29,7 +29,7 @@ async def lifespan(app: FastAPI):
     yield
     logger.info("ZKProof API shutting down.")
 
-    
+
 app = FastAPI(
     title="ZKProof API",
     description="Zero-knowledge proof generation as a service, powered by ZKSN.",
