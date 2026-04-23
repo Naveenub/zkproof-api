@@ -9,15 +9,15 @@ Zero-knowledge proof generation as a service, powered by [ZKSN](https://github.c
 ## Quick start
 
 ```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-npm install -g snarkjs
+  # 1. Install dependencies
+  pip install -r requirements.txt
+  npm install -g snarkjs
 
-# 2. Compile circuits (first time only — requires circom binary)
-chmod +x compile_circuits.sh && ./compile_circuits.sh
+  # 2. Compile circuits (first time only — requires circom binary)
+  chmod +x compile_circuits.sh && ./compile_circuits.sh
 
-# 3. Start the server
-uvicorn main:app --reload
+  # 3. Start the server
+  uvicorn main:app --reload
 ```
 
 API is live at `http://localhost:8000`
@@ -28,33 +28,33 @@ Docs at `http://localhost:8000/docs`
 ## Generate a proof
 
 ```bash
-curl -X POST http://localhost:8000/v1/proofs \
-  -H "Authorization: Bearer zk_live_k9mXpQ2nRtY7vLsJ3hWdFbAeUcN4o8_4a2f" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "circuit":  "identity_verify",
-    "system":   "groth16",
-    "inputs": {
-      "age":        24,
-      "secret":     99999,
-      "threshold":  18,
-      "commitment": 12345
-    }
-  }'
+  curl -X POST http://localhost:8000/v1/proofs \
+    -H "Authorization: Bearer zk_live_k9mXpQ2nRtY7vLsJ3hWdFbAeUcN4o8_4a2f" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "circuit":  "identity_verify",
+      "system":   "groth16",
+      "inputs": {
+        "age":        24,
+        "secret":     99999,
+        "threshold":  18,
+        "commitment": 12345
+      }
+    }'
 ```
 
 Response:
 ```json
-{
-  "proof_id":   "prf_a1b2c3d4e5f6",
-  "circuit":    "identity_verify",
-  "system":     "groth16",
-  "proof":      { "protocol": "groth16", "pi_a": [...], "pi_b": [...], "pi_c": [...] },
-  "public":     ["18", "12345"],
-  "verified":   true,
-  "latency_ms": 74,
-  "created_at": "2026-04-23T11:42:01+00:00"
-}
+  {
+    "proof_id":   "prf_a1b2c3d4e5f6",
+    "circuit":    "identity_verify",
+    "system":     "groth16",
+    "proof":      { "protocol": "groth16", "pi_a": [...], "pi_b": [...], "pi_c": [...] },
+    "public":     ["18", "12345"],
+    "verified":   true,
+    "latency_ms": 74,
+    "created_at": "2026-04-23T11:42:01+00:00"
+  }
 ```
 
 ---
@@ -114,7 +114,7 @@ zkproof-api/
 ## Run tests
 
 ```bash
-pytest tests/ -v
+  pytest tests/ -v
 ```
 
 ---
@@ -122,11 +122,11 @@ pytest tests/ -v
 ## Deploy (Docker)
 
 ```bash
-# Build (after running compile_circuits.sh)
-docker build -t zkproof-api .
+  # Build (after running compile_circuits.sh)
+  docker build -t zkproof-api .
 
-# Run
-docker run -p 8000:8000 zkproof-api
+  # Run
+  docker run -p 8000:8000 zkproof-api
 ```
 
 ---
